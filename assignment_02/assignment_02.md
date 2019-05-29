@@ -117,6 +117,11 @@ ALGORITHM BetterBubble(a[0..n])
 > Assume that the length of the text (47 chars) is known before the search starts.
 <!-- prettier-ignore-end -->
 
+Max number of comparisons if no initial match = $47 - 6 + 1 = 42$.
+One iteration matches out of the $42$, but it fails immediately on the second comparison.
+
+Thus, there are **43** comparisions.
+
 ## 7. Problem 5 (part a & b) (2 points)
 
 > How many comparisons (both successful and unsuccessful) will be made by the
@@ -125,13 +130,29 @@ ALGORITHM BetterBubble(a[0..n])
 
 > a. 00001
 
+Max number of searches if no initial match = $1000 - 5 + 1 = 996$
+
+Each iteration initially matches, and continues to match $5$ times, until it ultimately fails.
+
+Thus, there will be $996 * 5 = 4980$ comparisons in total.
+
 > b. 10000
+
+Max number of searches if no initial match = $1000 - 5 + 1 = 996$
+
+Each initial iteration immediately fails.
+
+Thus, there will be $996$ comparisons in total.
 
 ## 8. Problem 6 (2 points)
 
 > Give an example of a text of length `n` and a pattern of length `m` that
 > constitutes a worst-case input for the brute-force string-matching algorithm.
 > Exactly how many character comparisons will be made for such input?
+
+A simple example of this can be found in the last problem (part a).
+
+As previously stated, there will be $4890$ comparisons.
 
 # Exercises 3.4
 
