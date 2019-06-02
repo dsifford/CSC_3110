@@ -160,6 +160,20 @@ As previously stated, there will be $4890$ comparisons.
 
 > Outline an exhaustive-search algorithm for the Hamiltonian circuit problem.
 
+Starting with a given vertex, and with a list of all vertices in the graph...
+
+1. Arbitrarily search down an unvisited vertex, proceeding down the next
+   unvisited vertex repeatedly until either there are no more moves or until we
+   return to the starting vertex.
+2. While searching, keep a list of visited vertices.
+3. If there are no more moves, move up 1 vertex and choose another vertex and
+   continue searching until an event in step 1 happens.
+4. If we land at the starting vertex, check to see that all vertices have been
+   visited. If not, move up 1 vertex and continue searching until an event in
+   step 1 happens.
+5. If there are no more paths to take, then the graph fails and is not a
+   Hamiltonian circuit.
+
 # Exercises 3.5:
 
 ## 10. Problem 1 (part a & b) (4 points)
@@ -169,6 +183,26 @@ As previously stated, there will be $4890$ comparisons.
 > a. Write down the adjacency matrix and adjacency lists specifying this graph.
 > (Assume that the matrix rows and columns and vertices in the adjacency lists
 > follow in the alphabetical order of the vertex labels.)
+
+|     |  a  |  b  |  c  |  d  |  e  |  f  |  g  |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|  a  |  0  |  1  |  1  |  1  |  1  |  0  |  0  |
+|  b  |  1  |  0  |  0  |  1  |  0  |  1  |  0  |
+|  c  |  1  |  0  |  0  |  0  |  0  |  0  |  1  |
+|  d  |  1  |  1  |  0  |  0  |  0  |  1  |  0  |
+|  e  |  1  |  0  |  0  |  0  |  0  |  0  |  1  |
+|  f  |  0  |  1  |  0  |  1  |  0  |  0  |  0  |
+|  g  |  0  |  0  |  1  |  0  |  1  |  0  |  0  |
+
+```
+[a] -> b -> c -> d -> e
+[b] -> a -> d -> f
+[c] -> a -> g
+[d] -> a -> b -> f
+[e] -> a -> g
+[f] -> b -> d
+[g] -> c -> e
+```
 
 > b. Starting at vertex a and resolving ties by the vertex alphabetical order,
 > traverse the graph by depth-ﬁrst search and construct the corresponding
@@ -187,10 +221,17 @@ As previously stated, there will be $4890$ comparisons.
 > a. Explain how one can check a graph's acyclicity by using breadth-ﬁrst
 > search.
 
+You can test for acyclicity by constructing a BFS forest of the graph. If there
+are any _cross edges_ present in the forest, then you can conclude that the
+graph has at least one cycle.
+
 > b. Does either of the two traversals (DFS or BFS) always ﬁnd a cycle faster
 > than the other? If you answer yes, indicate which of them is better and
 > explain why it is the case; if you answer no, give two examples supporting
 > your answer.
+
+Yes, BFS will identify cycles faster because long acyclic paths would tie up the
+DFS algorithm, whereas the BFS algorithm would not be tied up.
 
 ## 13. Problem 7 (part a & b)(4 points)
 
