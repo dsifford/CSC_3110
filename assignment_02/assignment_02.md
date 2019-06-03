@@ -117,8 +117,8 @@ ALGORITHM BetterBubble(a[0..n])
 > Assume that the length of the text (47 chars) is known before the search starts.
 <!-- prettier-ignore-end -->
 
-Max number of comparisons if no initial match = $47 - 6 + 1 = 42$.
-One iteration matches out of the $42$, but it fails immediately on the second comparison.
+Max number of comparisons if no initial match = $47 - 6 + 1 = 42$. One iteration
+matches out of the $42$, but it fails immediately on the second comparison.
 
 Thus, there are **43** comparisions.
 
@@ -132,7 +132,8 @@ Thus, there are **43** comparisions.
 
 Max number of searches if no initial match = $1000 - 5 + 1 = 996$
 
-Each iteration initially matches, and continues to match $5$ times, until it ultimately fails.
+Each iteration initially matches, and continues to match $5$ times, until it
+ultimately fails.
 
 Thus, there will be $996 * 5 = 4980$ comparisons in total.
 
@@ -239,4 +240,24 @@ DFS algorithm, whereas the BFS algorithm would not be tied up.
 
 > a. a depth-ﬁrst search.
 
+Starting with a list of all vertices in the graph, proceed through the the graph
+using a depth-first search. Upon landing on each newly-visted vertex, remove the
+vertex from the list of vertices. When search is exhausted, check the list of
+vertices. If any vertices are still remaining in the list of vertices, that
+means those vertices are not connected to the vertices connected to the starting
+vertex.
+
+Next, starting with a vertex from the list of remaining vertices, repeat the
+process. This will identify all connected components of a graph.
+
 > b. a breadth-ﬁrst search.
+
+Starting with a list of all vertices in the graph, proceed through the the graph
+using a breadth-first search. Upon landing on each newly-visted vertex, remove the
+vertex from the list of vertices. When search is exhausted, check the list of
+vertices. If any vertices are still remaining in the list of vertices, that
+means those vertices are not connected to the vertices connected to the starting
+vertex.
+
+Next, starting with a vertex from the list of remaining vertices, repeat the
+process. This will identify all connected components of a graph.
