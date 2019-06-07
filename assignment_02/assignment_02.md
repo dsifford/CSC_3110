@@ -211,11 +211,24 @@ Starting with a given vertex, and with a list of all vertices in the graph...
 > the ﬁrst time (pushed onto the traversal stack) and the order in which the
 > vertices became dead ends (popped off the stack).
 
+![dfs]
+
+**Stack:**
+
+```
+f[4,1] e[7,4]
+d[3,2] g[6,5]
+b[2,3] c[5,6]
+a[1,7]
+```
+
 ## 11. Problem 4 (3 points)
 
 > Traverse the graph of Problem 1 by breadth-ﬁrst search and construct the
 > corresponding breadth-ﬁrst search tree. Start the traversal at vertex `a` and
 > resolve ties by the vertex alphabetical order.
+
+![bfs]
 
 ## 12. Problem 6 (part a & b) (6 points)
 
@@ -261,3 +274,6 @@ vertex.
 
 Next, starting with a vertex from the list of remaining vertices, repeat the
 process. This will identify all connected components of a graph.
+
+[dfs]: bin/dfs.png
+[bfs]: bin/bfs.png

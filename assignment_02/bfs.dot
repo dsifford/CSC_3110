@@ -1,0 +1,20 @@
+graph G {
+    ordering=out
+    node [shape=circle]
+
+    a -- b
+    b -- a [style=dashed]
+    b -- d [style=dashed]
+    b -- f
+
+    a -- c
+    c -- g
+
+    a -- e
+    e -- g [style=dashed]
+
+    a -- d
+    d -- f [style=dashed]
+
+    {rank=same; b c e d}
+}

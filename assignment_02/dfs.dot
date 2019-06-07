@@ -1,0 +1,14 @@
+graph G {
+    node [shape=circle]
+
+    a -- b
+    b -- d
+    d -- a [style=dashed]
+    d -- f
+    f -- b [style=dashed]
+
+    a -- c
+    c -- g
+    g -- e
+    e -- a [style=dashed]
+}
